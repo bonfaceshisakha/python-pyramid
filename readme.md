@@ -1,4 +1,4 @@
-# ![RealWorld Example App](logo.png)
+# ![RealWorld Bonbon Example App](logo.png)
 
 <p align="center">
   <a href="https://circleci.com/gh/niteoweb/pyramid-realworld-example-app">
