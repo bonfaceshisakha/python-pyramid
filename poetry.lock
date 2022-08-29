@@ -33,7 +33,7 @@ cffi = ">=1.0.0"
 six = "*"
 
 [package.extras]
-dev = ["coverage", "hypothesis", "pytest", "sphinx", "wheel", "pre-commit"]
+dev = ["coverage", "hypothesis", "pre-commit", "pytest", "sphinx", "wheel"]
 docs = ["sphinx"]
 tests = ["coverage", "hypothesis", "pytest"]
 
@@ -54,8 +54,8 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.extras]
-azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "pytest-azurepipelines"]
-dev = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "pre-commit"]
+azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-azurepipelines", "six", "zope.interface"]
+dev = ["coverage", "hypothesis", "pre-commit", "pympler", "pytest (>=4.3.0)", "six", "sphinx", "zope.interface"]
 docs = ["sphinx", "zope.interface"]
 tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
 
@@ -239,8 +239,8 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-testing = ["black (>=19.3b0)", "pytest-cov (>=2.7.1)", "pytest (>=4.6.1)"]
-dev = ["black (>=19.3b0)", "pytest-cov (>=2.7.1)", "pytest (>=4.6.1)", "tox (>=3.7.0)"]
+dev = ["black (>=19.3b0)", "pytest (>=4.6.1)", "pytest-cov (>=2.7.1)", "tox (>=3.7.0)"]
+testing = ["black (>=19.3b0)", "pytest (>=4.6.1)", "pytest-cov (>=2.7.1)"]
 
 [[package]]
 name = "fake-useragent"
@@ -505,8 +505,8 @@ optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 
 [package.extras]
-docs = ["watchdog", "sphinx", "pylons-sphinx-themes"]
-testing = ["watchdog", "pytest", "pytest-cov", "mock"]
+docs = ["pylons-sphinx-themes", "sphinx", "watchdog"]
+testing = ["mock", "pytest", "pytest-cov", "watchdog"]
 
 [[package]]
 name = "identify"
@@ -547,10 +547,10 @@ optional = false
 python-versions = ">=3.6.1,<4.0"
 
 [package.extras]
-pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
-requirements_deprecated_finder = ["pipreqs", "pip-api"]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
 plugins = ["setuptools"]
+requirements_deprecated_finder = ["pip-api", "pipreqs"]
 
 [[package]]
 name = "jsonschema"
@@ -567,7 +567,7 @@ six = ">=1.11.0"
 
 [package.extras]
 format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors"]
-format_nongpl = ["idna", "jsonpointer (>1.13)", "webcolors", "rfc3986-validator (>0.1.0)", "rfc3339-validator"]
+format_nongpl = ["idna", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "webcolors"]
 
 [[package]]
 name = "lazy-object-proxy"
@@ -747,8 +747,8 @@ parse = ">=1.8.4"
 six = ">=1.11"
 
 [package.extras]
+develop = ["coverage (>=4.4)", "pytest (>=3.2)", "pytest-cov", "tox (>=2.8)"]
 docs = ["sphinx (>=1.2)"]
-develop = ["tox (>=2.8)", "pytest-cov", "pytest (>=3.2)", "coverage (>=4.4)"]
 
 [[package]]
 name = "passlib"
@@ -761,7 +761,7 @@ python-versions = "*"
 [package.extras]
 argon2 = ["argon2-cffi (>=18.2.0)"]
 bcrypt = ["bcrypt (>=3.1.0)"]
-build_docs = ["sphinx (>=1.6)", "sphinxcontrib-fulltoc (>=1.2.0)", "cloud-sptheme (>=1.10.0)"]
+build_docs = ["cloud-sptheme (>=1.10.0)", "sphinx (>=1.6)", "sphinxcontrib-fulltoc (>=1.2.0)"]
 totp = ["cryptography"]
 
 [[package]]
@@ -773,7 +773,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-docs = ["pylons-sphinx-themes", "Sphinx (>=1.7.5)"]
+docs = ["Sphinx (>=1.7.5)", "pylons-sphinx-themes"]
 paste = ["paste"]
 
 [[package]]
@@ -801,7 +801,7 @@ optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 
 [package.extras]
-docs = ["sphinx", "pylons-sphinx-themes"]
+docs = ["pylons-sphinx-themes", "sphinx"]
 testing = ["pytest", "pytest-cov"]
 
 [[package]]
@@ -817,7 +817,7 @@ PasteDeploy = ">=2.0"
 plaster = ">=0.5"
 
 [package.extras]
-testing = ["pytest-cov", "pytest"]
+testing = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "pluggy"
@@ -986,8 +986,8 @@ webob = ">=1.8.3"
 "zope.interface" = ">=3.8.0"
 
 [package.extras]
-docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-themes (>=1.0.8)", "pylons-sphinx-latesturl", "repoze.sphinx.autointerface", "sphinxcontrib-autoprogram"]
-testing = ["webtest (>=1.3.1)", "zope.component (>=4.0)", "coverage", "nose", "virtualenv"]
+docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-latesturl", "pylons-sphinx-themes (>=1.0.8)", "repoze.sphinx.autointerface", "sphinxcontrib-autoprogram"]
+testing = ["coverage", "nose", "virtualenv", "webtest (>=1.3.1)", "zope.component (>=4.0)"]
 
 [[package]]
 name = "pyramid-deferred-sqla"
@@ -1092,8 +1092,8 @@ pyramid = ">=1.9"
 "zope.interface" = "*"
 
 [package.extras]
-testing = ["webtest", "pytest-cov", "pytest"]
-docs = ["repoze.sphinx.autointerface", "pylons-sphinx-themes", "sphinx"]
+docs = ["pylons-sphinx-themes", "repoze.sphinx.autointerface", "sphinx"]
+testing = ["pytest", "pytest-cov", "webtest"]
 
 [[package]]
 name = "pyramid-tm"
@@ -1108,8 +1108,8 @@ pyramid = ">=1.5"
 transaction = ">=2.0"
 
 [package.extras]
-docs = ["sphinx", "pylons-sphinx-themes"]
-testing = ["webtest", "nose", "coverage"]
+docs = ["pylons-sphinx-themes", "sphinx"]
+testing = ["coverage", "nose", "webtest"]
 
 [[package]]
 name = "pyrsistent"
@@ -1188,7 +1188,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 pytest = ">=2.7"
 
 [package.extras]
-dev = ["tox", "pre-commit"]
+dev = ["pre-commit", "tox"]
 
 [[package]]
 name = "pytest-randomly"
@@ -1203,15 +1203,15 @@ pytest = "*"
 
 [[package]]
 name = "pytest-testmon"
-version = "1.0.2"
+version = "1.3.5"
 description = "selects tests affected by changed files and methods"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = "<3.11,>=3.7"
 
 [package.dependencies]
-coverage = ">=4,<6"
-pytest = ">=5,<6"
+coverage = ">=5,<7"
+pytest = ">=5,<8"
 
 [[package]]
 name = "pytest-watch"
@@ -1278,7 +1278,7 @@ python-versions = "*"
 
 [package.extras]
 flask = ["Flask (>=0.8)", "blinker (>=1.1)"]
-tests = ["bottle", "celery (>=2.5)", "coverage (<4)", "exam (>=0.5.2)", "flake8 (==3.5.0)", "logbook", "mock", "nose", "pytz", "pytest (>=3.2.0,<3.3.0)", "pytest-timeout (==1.2.1)", "pytest-xdist (==1.18.2)", "pytest-pythonpath (==0.7.2)", "pytest-cov (==2.5.1)", "pytest-flake8 (==1.0.0)", "requests", "tornado (>=4.1,<5.0)", "tox", "webob", "webtest", "wheel", "anyjson", "zconfig", "Flask (>=0.8)", "blinker (>=1.1)", "Flask-Login (>=0.2.0)", "blinker (>=1.1)", "sanic (>=0.7.0)", "aiohttp"]
+tests = ["Flask (>=0.8)", "Flask-Login (>=0.2.0)", "aiohttp", "anyjson", "blinker (>=1.1)", "blinker (>=1.1)", "bottle", "celery (>=2.5)", "coverage (<4)", "exam (>=0.5.2)", "flake8 (==3.5.0)", "logbook", "mock", "nose", "pytest (>=3.2.0,<3.3.0)", "pytest-cov (==2.5.1)", "pytest-flake8 (==1.0.0)", "pytest-pythonpath (==0.7.2)", "pytest-timeout (==1.2.1)", "pytest-xdist (==1.18.2)", "pytz", "requests", "sanic (>=0.7.0)", "tornado (>=4.1,<5.0)", "tox", "webob", "webtest", "wheel", "zconfig"]
 
 [[package]]
 name = "requests"
@@ -1295,7 +1295,7 @@ idna = ">=2.5,<3"
 urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
 
 [package.extras]
-security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+security = ["cryptography (>=1.3.4)", "pyOpenSSL (>=0.14)"]
 socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
@@ -1328,7 +1328,7 @@ requests = ">=2.0"
 six = "*"
 
 [package.extras]
-tests = ["coverage (>=3.7.1,<5.0.0)", "pytest-cov", "pytest-localserver", "flake8", "pytest (>=4.6,<5.0)", "pytest"]
+tests = ["coverage (>=3.7.1,<5.0.0)", "flake8", "pytest", "pytest (>=4.6,<5.0)", "pytest-cov", "pytest-localserver"]
 
 [[package]]
 name = "ruamel.yaml"
@@ -1437,10 +1437,10 @@ python-versions = "*"
 six = "*"
 
 [package.extras]
-azure-pipelines = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest (>=3.3.0)", "simplejson", "pytest-azurepipelines", "python-rapidjson", "pytest-asyncio"]
-dev = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest (>=3.3.0)", "simplejson", "sphinx", "twisted", "pre-commit", "python-rapidjson", "pytest-asyncio"]
+azure-pipelines = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest (>=3.3.0)", "pytest-asyncio", "pytest-azurepipelines", "python-rapidjson", "simplejson"]
+dev = ["coverage", "freezegun (>=0.2.8)", "pre-commit", "pretend", "pytest (>=3.3.0)", "pytest-asyncio", "python-rapidjson", "simplejson", "sphinx", "twisted"]
 docs = ["sphinx", "twisted"]
-tests = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest (>=3.3.0)", "simplejson", "python-rapidjson", "pytest-asyncio"]
+tests = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest (>=3.3.0)", "pytest-asyncio", "python-rapidjson", "simplejson"]
 
 [[package]]
 name = "testfixtures"
@@ -1451,9 +1451,9 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-build = ["setuptools-git", "wheel", "twine"]
-docs = ["sphinx", "zope.component", "sybil", "twisted", "mock", "django (<2)", "django"]
-test = ["pytest (>=3.6)", "pytest-cov", "pytest-django", "zope.component", "sybil", "twisted", "mock", "django (<2)", "django"]
+build = ["setuptools-git", "twine", "wheel"]
+docs = ["django", "django (<2)", "mock", "sphinx", "sybil", "twisted", "zope.component"]
+test = ["django", "django (<2)", "mock", "pytest (>=3.6)", "pytest-cov", "pytest-django", "sybil", "twisted", "zope.component"]
 
 [[package]]
 name = "text-unidecode"
@@ -1480,7 +1480,7 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
 
 [package.extras]
-dev = ["py-make (>=0.1.0)", "twine", "argopt", "pydoc-markdown"]
+dev = ["argopt", "py-make (>=0.1.0)", "pydoc-markdown", "twine"]
 
 [[package]]
 name = "transaction"
@@ -1494,9 +1494,9 @@ python-versions = "*"
 "zope.interface" = "*"
 
 [package.extras]
-testing = ["mock", "coverage", "nose"]
-test = ["mock"]
 docs = ["repoze.sphinx.autointerface", "sphinx"]
+test = ["mock"]
+testing = ["coverage", "mock", "nose"]
 
 [[package]]
 name = "translationstring"
@@ -1515,8 +1515,8 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-testing = ["mypy", "pytest-cov", "pytest"]
-dev = ["mypy", "pytest-cov", "pytest", "tox"]
+dev = ["mypy", "pytest", "pytest-cov", "tox"]
+testing = ["mypy", "pytest", "pytest-cov"]
 
 [[package]]
 name = "typed-ast"
@@ -1544,7 +1544,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 
 [package.extras]
 brotli = ["brotlipy (>=0.6.0)"]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
@@ -1556,8 +1556,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-testing = ["coverage", "pytest-cov", "pytest"]
 docs = ["repoze.sphinx.autointerface", "sphinx"]
+testing = ["coverage", "pytest", "pytest-cov"]
 
 [[package]]
 name = "virtualenv"
@@ -1574,8 +1574,8 @@ filelock = ">=3.0.0,<4"
 six = ">=1.9.0,<2"
 
 [package.extras]
-docs = ["sphinx (>=2.0.0,<3)", "sphinx-argparse (>=0.2.5,<1)", "sphinx-rtd-theme (>=0.4.3,<1)", "towncrier (>=19.9.0rc1)", "proselint (>=0.10.2,<1)"]
-testing = ["pytest (>=4.0.0,<6)", "coverage (>=4.5.1,<6)", "pytest-mock (>=2.0.0,<3)", "pytest-env (>=0.6.2,<1)", "packaging (>=20.0)", "xonsh (>=0.9.13,<1)"]
+docs = ["proselint (>=0.10.2,<1)", "sphinx (>=2.0.0,<3)", "sphinx-argparse (>=0.2.5,<1)", "sphinx-rtd-theme (>=0.4.3,<1)", "towncrier (>=19.9.0rc1)"]
+testing = ["coverage (>=4.5.1,<6)", "packaging (>=20.0)", "pytest (>=4.0.0,<6)", "pytest-env (>=0.6.2,<1)", "pytest-mock (>=2.0.0,<3)", "xonsh (>=0.9.13,<1)"]
 
 [[package]]
 name = "w3lib"
@@ -1598,7 +1598,7 @@ python-versions = "*"
 
 [package.extras]
 docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-themes (>=1.0.9)"]
-testing = ["nose", "coverage (>=5.0)"]
+testing = ["coverage (>=5.0)", "nose"]
 
 [[package]]
 name = "watchdog"
@@ -1632,7 +1632,7 @@ python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*"
 
 [package.extras]
 docs = ["Sphinx (>=1.7.5)", "pylons-sphinx-themes"]
-testing = ["pytest (>=3.1.0)", "coverage", "pytest-cov", "pytest-xdist"]
+testing = ["coverage", "pytest (>=3.1.0)", "pytest-cov", "pytest-xdist"]
 
 [[package]]
 name = "websockets"
@@ -1658,7 +1658,7 @@ WebOb = ">=1.2"
 
 [package.extras]
 docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-themes (>=1.0.8)"]
-tests = ["nose (<1.3.0)", "coverage", "mock", "pastedeploy", "wsgiproxy2", "pyquery"]
+tests = ["coverage", "mock", "nose (<1.3.0)", "pastedeploy", "pyquery", "wsgiproxy2"]
 
 [[package]]
 name = "werkzeug"
@@ -1669,8 +1669,8 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [package.extras]
+dev = ["coverage", "pallets-sphinx-themes", "pytest", "sphinx", "sphinx-issues", "tox"]
 watchdog = ["watchdog"]
-dev = ["sphinx-issues", "pallets-sphinx-themes", "sphinx", "tox", "coverage", "pytest"]
 
 [[package]]
 name = "zope.deprecation"
@@ -1693,7 +1693,7 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [package.extras]
-docs = ["sphinx", "repoze.sphinx.autointerface"]
+docs = ["repoze.sphinx.autointerface", "sphinx"]
 test = ["zope.event"]
 testing = ["coverage", "nose", "zope.event"]
 
@@ -2315,8 +2315,7 @@ pytest-randomly = [
     {file = "pytest_randomly-3.2.1-py3-none-any.whl", hash = "sha256:8282a5a2066ed93d8d3eca6290538f34d09be05b7256ba94dba6fe3d2b1c514f"},
 ]
 pytest-testmon = [
-    {file = "pytest-testmon-1.0.2.tar.gz", hash = "sha256:fdb016d953036051d1ef0e36569b7168cefa4914014789a65a4ffefc87f85ac5"},
-    {file = "pytest_testmon-1.0.2-py3-none-any.whl", hash = "sha256:e79852203894bbd5a6adb7e0541316c0a3a84322e9766f746ed6b8b62f9897d9"},
+    {file = "pytest-testmon-1.3.5.tar.gz", hash = "sha256:9dc80d3bbea3d99dfbebaa23632754a186734684dbd97c6147a164285ce3ca12"},
 ]
 pytest-watch = [
     {file = "pytest-watch-4.2.0.tar.gz", hash = "sha256:06136f03d5b361718b8d0d234042f7b2f203910d8568f63df2f866b547b3d4b9"},
