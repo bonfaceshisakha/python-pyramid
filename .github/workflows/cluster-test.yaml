@@ -1,0 +1,46 @@
+name: Helm Chart Security Scan
+
+on:
+  push:
+    branches:
+      - ZAP-Test
+
+jobs:
+  security_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Helm
+        uses: helm/install@v1
+
+      - name: Install Kubernetes tools
+        uses: steebchen/kubectl@v1
+        with:
+          kubectl-version: "1.22.4"
+
+      - name: Install ZAP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zaproxy
+
+      - name: Create test Kubernetes cluster
+        run: |
+          kubectl create ns test
+          kubectl create deployment test --image=nginx -n test
+
+      - name: Install Helm chart into test cluster
+        run: |
+          helm install RELEASE_NAME CHART_DIRECTORY -n test --set service.type=ClusterIP
+
+      - name: Scan Helm release
+        run: |
+          host=$(helm get values RELEASE_NAME -n test | yq eval '.host' - | tr -d '"')
+          zap-cli quick-scan --spider --self-contained --recursive --baseline --alert-level low --output /tmp/RELEASE_NAME.html $host
+
+      - name: Publish ZAP report
+        uses: actions/upload-artifact@v2
+        with:
+          name: zap-report
+          path: /tmp/RELEASE_NAME.html
